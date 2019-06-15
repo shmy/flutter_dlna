@@ -43,4 +43,7 @@ class FlutterDlna {
       "url": url,
     });
   }
+  static void stop() async {
+    await _methodChannel.invokeMethod('stop');
+  }
 }
