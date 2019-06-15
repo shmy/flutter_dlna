@@ -54,6 +54,8 @@ public class FlutterDlnaPlugin implements MethodCallHandler, EventChannel.Stream
       handlePlay(uuid, url);
     } else if (call.method.equals("search")) {
       startDLNAService();
+    } else if (call.method.equals("stop")) {
+      stopDLNAService();
     } else if (call.method.equals("getDevicesList")) {
       result.success(getDevicesList());
     } else {
@@ -87,6 +89,12 @@ public class FlutterDlnaPlugin implements MethodCallHandler, EventChannel.Stream
     context.startService(intent);
 
   }
+
+  private void stopDLNAService() {
+    Intent intent = new Intent(context.getApplicationContext(), DLNAService.class);
+    context.stopService(intent);
+  }
+
 
   private Device findDevice(String uuid) {
     List<Device> devices = DLNAContainer.getInstance().getDevices();
