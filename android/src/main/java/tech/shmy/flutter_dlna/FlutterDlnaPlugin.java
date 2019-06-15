@@ -68,8 +68,11 @@ public class FlutterDlnaPlugin implements MethodCallHandler, EventChannel.Stream
       hm.put("name", device1.getFriendlyName());
       hm.put("ip", device1.getModelURL());
       hm.put("uuid", device1.getUDN());
-      System.out.println(device1.getModelURL());
-      System.out.println(device1.getLocation());
+//      System.out.println(device1.getModelURL());
+//      System.out.println(device1.getLocation());
+      System.out.println(device1.getInterfaceAddress());
+      System.out.println(device1.getPresentationURL());
+      System.out.println(device1.getMulticastIPv4Address());
       deviceList.add(hm);
     }
     return deviceList;
