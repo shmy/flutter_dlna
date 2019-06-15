@@ -28,7 +28,15 @@ class FlutterDlna {
   static void search() async {
     await _methodChannel.invokeMethod('search');
   }
-
+  static Future<List<dynamic>> get devices async {
+    try {
+      final List<dynamic> devices =
+      await _methodChannel.invokeMethod('getDevicesList');
+      return devices;
+    } on Exception catch (_) {
+      return [];
+    }
+  }
   static void play(String uuid, String url) async {
     await _methodChannel.invokeMethod('play', {
       "uuid": uuid,

@@ -54,26 +54,31 @@ public class FlutterDlnaPlugin implements MethodCallHandler, EventChannel.Stream
       handlePlay(uuid, url);
     } else if (call.method.equals("search")) {
       startDLNAService();
+    } else if (call.method.equals("getDevicesList")) {
+      result.success(getDevicesList());
     } else {
       result.notImplemented();
     }
   }
-
+  private getDevicesList() {
+    List<Device> devices = DLNAContainer.getInstance().getDevices();
+    for (Device device1 : devices) {
+      HashMap hm = new HashMap();
+      hm.put("name", device1.getFriendlyName());
+      hm.put("uuid", device1.getUDN());
+      deviceList.add(hm);
+    }
+    return deviceList;
+  }
   private void startDLNAService() {
 
     DLNAContainer.getInstance().setDeviceChangeListener(new DLNAContainer.DeviceChangeListener() {
       @Override
       public void onDeviceChange(Device device) {
         deviceList.clear();
-        List<Device> devices = DLNAContainer.getInstance().getDevices();
-        for (Device device1 : devices) {
-          HashMap hm = new HashMap();
-          hm.put("name", device1.getFriendlyName());
-          hm.put("uuid", device1.getUDN());
-          deviceList.add(hm);
-        }
+
         if (eventSink != null) {
-          eventSink.success(deviceList);
+          eventSink.success(getDevicesList());
         }
 
       }
