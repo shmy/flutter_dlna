@@ -31,10 +31,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/main/java/tech/shmy/flutter_dlna/FlutterDlnaPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+            <state relative-caret-position="137">
+              <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2695#2936#0" expanded="true" />
+                <element signature="e#2935#2936#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -198,7 +200,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560584267164</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="updated">
+      <created>1560584283646</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1560584283646</updated>
+    </task>
+    <task id="LOCAL-00004" summary="updated">
+      <created>1560584309933</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1560584309933</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -267,10 +283,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/main/java/tech/shmy/flutter_dlna/FlutterDlnaPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+        <state relative-caret-position="137">
+          <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2695#2936#0" expanded="true" />
+            <element signature="e#2935#2936#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -61,11 +61,15 @@ public class FlutterDlnaPlugin implements MethodCallHandler, EventChannel.Stream
     }
   }
   private ArrayList<HashMap> getDevicesList() {
+    deviceList.clear();
     List<Device> devices = DLNAContainer.getInstance().getDevices();
     for (Device device1 : devices) {
       HashMap hm = new HashMap();
       hm.put("name", device1.getFriendlyName());
+      hm.put("ip", device1.getModelURL());
       hm.put("uuid", device1.getUDN());
+      System.out.println(device1.getModelURL());
+      System.out.println(device1.getLocation());
       deviceList.add(hm);
     }
     return deviceList;
@@ -75,8 +79,6 @@ public class FlutterDlnaPlugin implements MethodCallHandler, EventChannel.Stream
     DLNAContainer.getInstance().setDeviceChangeListener(new DLNAContainer.DeviceChangeListener() {
       @Override
       public void onDeviceChange(Device device) {
-        deviceList.clear();
-
         if (eventSink != null) {
           eventSink.success(getDevicesList());
         }
