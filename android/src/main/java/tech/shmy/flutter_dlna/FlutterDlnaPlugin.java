@@ -60,7 +60,7 @@ public class FlutterDlnaPlugin implements MethodCallHandler, EventChannel.Stream
       result.notImplemented();
     }
   }
-  private List<HashMap> getDevicesList() {
+  private ArrayList<HashMap> getDevicesList() {
     List<Device> devices = DLNAContainer.getInstance().getDevices();
     for (Device device1 : devices) {
       HashMap hm = new HashMap();
