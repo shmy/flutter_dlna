@@ -66,13 +66,8 @@ public class FlutterDlnaPlugin implements MethodCallHandler, EventChannel.Stream
     for (Device device1 : devices) {
       HashMap hm = new HashMap();
       hm.put("name", device1.getFriendlyName());
-      hm.put("ip", device1.getModelURL());
+      hm.put("ip", device1.getInterfaceAddress());
       hm.put("uuid", device1.getUDN());
-//      System.out.println(device1.getModelURL());
-//      System.out.println(device1.getLocation());
-      System.out.println(device1.getInterfaceAddress());
-      System.out.println(device1.getPresentationURL());
-      System.out.println(device1.getMulticastIPv4Address());
       deviceList.add(hm);
     }
     return deviceList;
